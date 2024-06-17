@@ -9,6 +9,7 @@ export interface Platform {
 }
 
 export interface Game {
+    getCroppedImageUrl(background_image: any): string | undefined;
     id: number;
     name: string;
     background_image: string;
