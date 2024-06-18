@@ -13,6 +13,8 @@ const useData = <T>(endpoint: string) => {
     const [data, setData] = useState<T[]>([]);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
 
     useEffect(() => {
         const controller = new AbortController();
@@ -37,7 +39,7 @@ const useData = <T>(endpoint: string) => {
             console.log("aborted")
         };
     }, []);
-    return { data, error, loading };
+    return { data, error, loading, skeletons };
 }
 
 export default useData;
