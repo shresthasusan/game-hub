@@ -4,7 +4,7 @@ import GameGrid from "./components/GameGrid";
 
 function App() {
   return (
-    <Grid
+    <Grid padding={{ sm:  "0 20px", lg:" 24px 40px" }} 
       templateAreas={{
         base: `
         "nav "
@@ -16,7 +16,7 @@ function App() {
       `,
       }}
     >
-      <GridItem area="nav">
+      <GridItem  area="nav">
         <NavBar />
       </GridItem>
       <Show above="lg">
