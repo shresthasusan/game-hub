@@ -8,6 +8,12 @@ export interface Platform {
     slug: string;
 }
 
+export interface genre {
+    id: number;
+    name: string;
+    slug: string;
+}
+
 export interface Game {
     getCroppedImageUrl(background_image: any): string | undefined;
     id: number;
@@ -15,6 +21,7 @@ export interface Game {
     background_image: string;
     parent_platforms: { platform: Platform }[];
     metacritic: number;
+    genre: genre[]
 }
 
 
