@@ -4,19 +4,13 @@ import apiClients from "../services/api-clients";
 
 
 
-export interface Genre {
-    id: number;
-    name: string;
-    slug: string;
-}
-
-interface FetchGenreResponse {
+interface FetchResponse<T> {
     count: number;
-    results: Genre[];
+    results: T[];
 }
 
-const useGenre = () => {
-    const [genres, setGenres] = useState<Genre[]>([]);
+const useData = <T>(endpoint: string) => {
+    const [data, setData] = useState<T[]>([]);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
@@ -25,13 +19,17 @@ const useGenre = () => {
 
         setLoading(true);
         apiClients
-            .get<FetchGenreResponse>('/genres', { signal: controller.signal })
+            .get<FetchResponse<T>>(endpoint, { signal: controller.signal })
             .then((res) => {
-                setGenres(res.data.results);
+                setData(res.data.results);
+                setLoading(false);
+
             })
             .catch(err => {
                 if (err instanceof CanceledError) return;
-                setError(err.message)
+                setError(err.message);
+                setLoading(false);
+
             });
 
         return () => {
@@ -39,7 +37,7 @@ const useGenre = () => {
             console.log("aborted")
         };
     }, []);
-    return { genres, error, loading };
+    return { data, error, loading };
 }
 
-export default useGenre;
+export default useData;
