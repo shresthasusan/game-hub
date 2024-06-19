@@ -1,4 +1,4 @@
-import { Heading, SimpleGrid, Text } from "@chakra-ui/react";
+import { SimpleGrid, Text } from "@chakra-ui/react";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
@@ -15,9 +15,6 @@ const GameGrid = ({ gameQuery }: Props) => {
   return (
     <>
       {error && <Text>{error}</Text>}
-      <Heading fontSize={"4xl"} marginY={10}>
-        {gameQuery.genre?.id ? `${gameQuery.genre.name}` : "All Games"}
-      </Heading>
 
       <SimpleGrid
         padding={1}
