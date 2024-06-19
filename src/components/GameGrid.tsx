@@ -16,7 +16,7 @@ const GameGrid = ({ gameQuery }: Props) => {
   return (
     <>
       {error && <Text>{error}</Text>}
-      <Heading fontSize={"2xl"} margin={10}>
+      <Heading fontSize={"4xl"} marginY={10}>
         {gameQuery.genre?.id ? `${gameQuery.genre.name}` : "All Games"}
       </Heading>
 
