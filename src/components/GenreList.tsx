@@ -21,7 +21,9 @@ const GenreList = ({ onGenreSelect, selectedGenre }: Props) => {
 
   return (
     <div>
-      <Heading fontSize={"2xl"} marginY={5}>Genres</Heading>
+      <Heading fontSize={"2xl"} marginY={5}>
+        Genres
+      </Heading>
       {loading && (
         <List>
           {skeletons.map((index) => (
@@ -46,7 +48,10 @@ const GenreList = ({ onGenreSelect, selectedGenre }: Props) => {
                 alt={genre.name}
                 objectFit={"cover"}
               />
-              <Button whiteSpace={"normal"} textAlign={"left"} fontWeight={selectedGenre?.id === genre.id ? "bold" : "normal"}
+              <Button
+                whiteSpace={"normal"}
+                textAlign={"left"}
+                fontWeight={selectedGenre?.id === genre.id ? "bold" : "normal"}
                 onClick={() => onGenreSelect(genre)}
                 variant="link"
                 fontSize="lg"
