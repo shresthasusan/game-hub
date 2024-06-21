@@ -26,6 +26,8 @@ function App() {
 
   return (
     <Grid
+      maxWidth={"1920px"}
+      margin={"auto"}
       padding={{ sm: "0 20px", lg: " 24px 40px" }}
       templateAreas={{
         base: `
