@@ -19,7 +19,7 @@ const AgeRating = ({ esrb_rating }: Props) => {
     "adults-only": "AO",
     ratingpending: "NR",
   };
-
+  if (!esrb_rating) return null;
   return (
     <Badge>{iconMap[esrb_rating]}</Badge>
     //  <Icon transform={"translateY(5px)"} marginX={1} boxSize={"24px"}  as={iconMap[esrb_rating]} color="gray.300" />
