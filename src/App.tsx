@@ -53,7 +53,7 @@ function App() {
           <GenreList
             onGenreSelect={(genre) => {
               setGameQuery({ ...gameQuery, genre });
-              console.log(genre);
+              
             }}
             selectedGenre={gameQuery.genre}
           />

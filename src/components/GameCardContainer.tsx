@@ -11,7 +11,7 @@ const GameCardContainer = ({ children }: Props) => {
       _hover={{ transform: "scale(1.03)", transition: "0.4s", zIndex: 2 }}
       className="GameCard"
       borderRadius={10}
-      overflow={"hidden"}
+      // overflow={"hidden"}
     >
       {children}
     </Box>

@@ -50,7 +50,7 @@ const GameCard = ({ game }: Props) => {
           </HStack>
           <Heading fontSize={"2xl"}>
             {game.name} {""}
-            <AgeRating esrb_rating={data.esrb_rating.slug} />
+            <AgeRating esrb_rating={data.esrb_rating?.slug} />
           </Heading>
           <div className="HiddenCard">
             {/* Display the released date using data?.released */}
