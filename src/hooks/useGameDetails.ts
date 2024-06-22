@@ -4,7 +4,7 @@ import apiClients from "../services/api-clients";
 
 
 
-interface FetchDetailsResponse {
+export interface FetchDetailsResponse {
     id: number;
     rating: number;
     released: string;

@@ -1,3 +1,13 @@
 form {
-    width: 100%;
+  width: 100%;
+}
+
+.HiddenCard {
+  display: none;
+
+  transition: 10s;
+}
+
+.GameCard:hover .HiddenCard {
+  display: block;
 }

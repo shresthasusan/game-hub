@@ -19,6 +19,7 @@ const GameGrid = ({ gameQuery }: Props) => {
       padding={1}
       columns={{ sm: 1, md: 2, lg: 3, xl: 5 }}
       spacing={5}
+      position={"relative"}
     >
       {data.map((game) => (
         <GameCardContainer key={game.id}>
